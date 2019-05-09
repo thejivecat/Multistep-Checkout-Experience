@@ -115,23 +115,24 @@ class App extends React.Component {
 			return (
 				<div>
 					<h1>User Information</h1>
-					{this.state.name}<br/>
-					{this.state.email}<br/>
-					{this.state.password}
+					Name: {this.state.name}<br/>
+					Email: {this.state.email}<br/>
+					Password: {this.state.password}
 					<br/>
 					<h1>Shipping Information</h1>
-					{this.state.line1}<br/>
+					Address: {this.state.line1}<br/>
 					{this.state.line2}<br/>
-					{this.state.city}<br/>
-					{this.state.state}<br/>
-					{this.state.zip}<br/>
-					{this.state.phone}
+					City: {this.state.city}<br/>
+					State: {this.state.state}<br/>
+					ZIP: {this.state.zip}<br/>
+					Phone: {this.state.phone}
 					<br/>
 					<h1>Credit Card Information</h1>
-					{this.state.credit}<br/>
-					{this.state.expiration}<br/> 
-					{this.state.cvv} <br/> 
-					{this.state.billingzip}
+					Credit Card Number: {this.state.credit}<br/>
+					Expiration Date: {this.state.expiration}<br/> 
+					CVV: {this.state.cvv} <br/> 
+					Billing ZIP: {this.state.billingzip}<br/>
+				<button type="button" name="Purchase" onClick={() => this.setHome()}>Next</button>
 				</div>
 			)
 		} else {
@@ -140,9 +141,7 @@ class App extends React.Component {
 					{this.state.stateCounter === 0 ? <Homepage incCount={this.incCount}/> : undefined} 
 					{this.state.stateCounter === 1 ? <Info incCount={this.incCount} handleChange={this.handleChange}/> : undefined} 
 					{this.state.stateCounter === 2 ? <Shipping incCount={this.incCount} handleChange={this.handleChange}/> : undefined}
-					{this.state.stateCounter === 3 ? <Credit incCount={this.incCount} handleChange={this.handleChange}/> : undefined}
-					{this.state.stateCounter === 5 ? <Homepage setHome={this.setHome}/> : undefined}
-				
+					{this.state.stateCounter === 3 ? <Credit incCount={this.incCount} handleChange={this.handleChange}/> : undefined}				
 				</div>
 			)
 		}
